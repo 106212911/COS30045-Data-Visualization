@@ -1,3 +1,6 @@
 .faq-answer {
     display: none;
 }
+.faq-answer.show-answer {
+    display: block;
+}
