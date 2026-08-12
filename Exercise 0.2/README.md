@@ -23,7 +23,7 @@ The objectives of this exercise are:
 
 1. Open this repository.
 2. Click **Fork** at the top right of the page.
-3. This will create a copy of the repository in your GitHub account.
+3. This will crea te a copy of the repository in your GitHub account.
 
 Example:
 
