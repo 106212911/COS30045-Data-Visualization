@@ -4,3 +4,9 @@
 .faq-answer.show-answer {
     display: block;
 }
+
+
+nav a.active {
+    font-weight: bold;
+    color: #cc7a00; 
+}
