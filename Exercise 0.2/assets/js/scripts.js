@@ -7,3 +7,4 @@ questions.forEach(function(question) { // a for each loop
     });
 });
 
+document.getElementById('current-year').textContent = new Date().getFullYear();
