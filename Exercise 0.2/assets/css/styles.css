@@ -1,3 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    line-height: 1.6;
+    background-color: whitesmoke;
+
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #4a2a0a;
+}
+
+
+
+header {
+    display: flex;
+    align-items: center;  /*align the text in the center basically*/
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: peachpuff;
+    border-bottom: 3px solid yellow;
+
+}
+
+.header-logo {
+    width: 70px;
+    height: 70px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    color: lightcoral;
+    border-bottom-color: lightsalmon;
+}
+
+nav a.active {
+    color: orange;
+    border-bottom-color: lightsalmon;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .faq-answer {
     display: none;
 }
