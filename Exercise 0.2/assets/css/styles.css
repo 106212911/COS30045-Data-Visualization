@@ -8,7 +8,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     line-height: 1.6;
-    background-color: whitesmoke;
+    background: linear-gradient(180deg, #fdf6ec 0%, #f5efe4 100%);
 
 }
 
@@ -26,8 +26,6 @@ h1, h2, h3 {
     padding: 20px 40px;
     background-color: peachpuff;
     border-bottom: 3px solid yellow;
-    max-width: 1400px;
-    margin: 0 auto;
 
 }
 
