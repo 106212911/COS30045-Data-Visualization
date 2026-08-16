@@ -26,6 +26,8 @@ h1, h2, h3 {
     padding: 20px 40px;
     background-color: peachpuff;
     border-bottom: 3px solid yellow;
+    max-width: 1400px;
+    margin: 0 auto;
 
 }
 
@@ -81,6 +83,9 @@ section p {
     margin-bottom: 14px;
 }
 
+section header {
+    margin-bottom: 16px;
+}
 
 
 
@@ -121,4 +126,17 @@ section p {
     display: block;
 }
 
+
+footer {
+    max-width: 900px;
+    margin: 60px auto 20px;
+    padding: 20px 40px;
+    border-top: 1px solid white;
+    font-size: 0.85rem;
+    color: peachpuff;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
 
