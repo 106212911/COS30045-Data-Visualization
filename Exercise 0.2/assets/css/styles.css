@@ -19,7 +19,7 @@ h1, h2, h3 {
 
 
 
-header {
+.site-header {
     display: flex;
     align-items: center;  /*align the text in the center basically*/
     justify-content: space-between;
