@@ -2,40 +2,92 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Energy Data Webpage for COS30045, Exercise 0.2.">
+    <meta name="description" content="Data Story for COS30045, Exercise 3: TV energy consumption by screen technology.">
     <meta name="keywords" content="COS30045, Data Visualisation, Energy, HTML, Swinburne">
-    <title>Energy Insights - Televisions</title>
+    <title>Energy Insights - Does Screen Technology Change Running Cost?</title>
     <link rel="stylesheet" href="assets/css/styles.css">
- <!-- This one is for the links to the styles folder for reference purpose-->
 </head>
 
-
 <body>
- <header class="site-header">
+<header class="site-header">
     <h1>
-    <a href="index.html"><img src="assets/img/PowerIcon.png" alt="PowerIcon Logo" class="header-logo"></a> 
+        <a href="index.html"><img src="assets/img/PowerIcon.png" alt="PowerIcon Logo" class="header-logo"></a>
     </h1>
     <nav>
-        <a href="index.html" >Home</a>
-        <a href="televisions.html" class="active"> Televisions</a>
-        <a href="about.html">About</a>
+        <a href="#overview">Overview</a>
+        <a href="#chart">The Data</a>
+        <a href="#takeaway">What This Means</a>
     </nav>
 </header>
 
-<section id="tv-energy">
+<section id="overview">
     <header>
-        <h2>Televisions Energy Consumptions</h2>
-        <p>Televisions power varies differently depending on the type of screen used on a television such as OLED, LED or LCD. Each has it's own strength and flaw which divides it's consumer base.</p>
-        <p> Later part addition</p>
+        <h2>Does Screen Technology Change How Much a TV Costs to Run?</h2>
+        <p>Today, many shoppers assume that the newer the display technology, the better its efficiency.
+            Although this may sound believable, recent research shows that Australia's televisions don't hold up as expected.
+            The newest technology in this dataset isn't the cheapest to run after all.</p>
     </header>
 </section>
 
-<footer>
-        <p>&copy; <span id="current-year"></span> Dayaanan A/L Kejandran</p>
-        <p>Gen AI Claude was used for guidance, debugging, and certain wording for some placeholder text. Code was written by myself and taken some from my own previous web html pages.</p>
-    </footer>
+<section id="chart">
+    <h3>Average Annual Energy Consumption by Screen Technology</h3>
+    <p>The chart below shows the mean labelled energy consumption (kWh per year) for TVs currently available
+    on the Australian market, grouped by screen technology.</p>
 
-    <script src="assets/js/scripts.js"></script>
+    <canvas id="energyChart" style="max-width: 700px; margin: 1rem 0;"></canvas>
+
+    <p class="chart-caption">Source: Australian Government TV energy rating dataset, processed in KNIME
+    (Group By: Screen_Tech, Aggregation: Mean of Labelled energy consumption (kWh/year)).</p>
+</section>
+
+<section id="explanation">
+    <h3>Understanding the Chart</h3>
+    <p>Plain LCD sets average <strong>334.5 kWh/year</strong> — The lowest of all 3 groups. LED-backlit
+    LCDs average <strong>455.3 kWh/year</strong>, and OLED sets average <strong>486.2 kWh/year</strong>,
+    roughly 45% higher than plain LCD.</p>
+    <p>This shows that the even the newest models that have great display technology is also the most efficient one
+    However, this dataset proves it is totally opposite.  The newer the technology, the higher the consumption compared to older LCD panels that posses simple technology. </p>
+</section>
+
+<section id="caveat">
+    <h3>What are the limitations?</h3>
+    <p>OLED and Premium LED Models are striving towards larger screen size which independently creates and increases energy use.
+        The ultimate takeaway would be for a buyer that is comparing 2 types of TV size to check the individual energy label 
+        rather than sticking to good technology alone which will cost them in the future.
+.</p>
+</section>
+
+<section id="takeaway">
+    <h3>What is the takeaway?</h3>
+    <p>When we are comparing Tv's, we should not assume or predict brand new display technologies is much more reliable and cheaper to run energy rating label on models.</p>
+</section>
+
+<footer>
+    <p>&copy; <span id="current-year"></span> Dayaanan A/L Kejandran</p>
+    <p>Gen AI Claude was used for guidance, debugging, and certain wording for some placeholder text. Code was written by myself and taken some from my own previous web html pages.</p>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+<script>
+    const ctx = document.getElementById('energyChart');
+    new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['LCD', 'LCD (LED)', 'OLED'],
+            datasets: [{
+                label: 'Mean Energy Consumption (kWh/year)',
+                data: [334.48, 455.31, 486.15],
+                backgroundColor: ['#4C72B0', '#DD8452', '#55A868']
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: { legend: { display: false } },
+            scales: { y: { title: { display: true, text: 'kWh per year' } } }
+        }
+    });
+</script>
 
 </body>
 </html>
