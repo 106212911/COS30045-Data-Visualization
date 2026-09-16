@@ -1,0 +1,156 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    line-height: 1.6;
+    background: linear-gradient(180deg, #fdf6ec 0%, #f5efe4 100%);
+
+}
+
+h1, h2, h3 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #4a2a0a;
+}
+
+
+
+.site-header {
+    display: flex;
+    align-items: center;  /*align the text in the center basically*/
+    justify-content: space-between;
+    padding: 20px 40px;
+    background-color: peachpuff;
+    border-bottom: 3px solid yellow;
+
+}
+
+.header-logo {
+    width: 70px;
+    height: 70px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    padding: 8px 4px;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    color: lightcoral;
+    border-bottom-color: lightsalmon;
+}
+
+nav a.active {
+    color: orange;
+    border-bottom-color: lightsalmon;
+    font-weight: 700;
+}
+
+
+section {
+
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 0 40px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(74, 42, 10, 0.08);
+    padding: 32px 40px;
+}
+
+section > header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+
+}
+
+section p {
+
+    margin-bottom: 14px;
+}
+
+section header {
+    margin-bottom: 16px;
+}
+
+
+
+.faq-item {
+    margin-bottom: 12px;
+}
+
+.faq-question {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background-color: lightsalmon;
+    border: 1px solid lightgoldenrodyellow;
+    padding: 14px 18px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: brown;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    box-shadow: 0 2px 6px black;
+    border-radius: 8px;
+}
+
+.faq-question:hover {
+    background-color: peachpuff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px black;
+}
+
+.faq-answer {
+    display: none;
+    padding: 12px 18px;
+    margin-top: -4px;
+    background-color: whitesmoke;
+    border-left: 3px solid lightsalmon;
+}
+
+
+
+.faq-answer.show-answer {
+    display: block;
+}
+
+
+footer {
+    max-width: 900px;
+    margin: 60px auto 20px;
+    padding: 20px 40px;
+    border-top: 1px solid white;
+    font-size: 0.85rem;
+    color: black;
+}
+
+footer p {
+    margin-bottom: 6px;
+}
+
+
+.header-logo {
+    transition: transform 0.2s ease;
+
+}
+
+.header-logo:hover {
+    transform: scale(1.08) rotate(-4deg);
+}
