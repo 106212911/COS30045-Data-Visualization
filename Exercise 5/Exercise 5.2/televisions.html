@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Energy Data Webpage for COS30045, Exercise 5.2.">
+    <meta name="keywords" content="COS30045, Data Visualisation, Energy, HTML, Swinburne">
+    <title>Energy Insights - Televisions</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Load D3.js v7 CDN -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+ <header class="site-header">
+    <h1>
+    <a href="index.html"><img src="assets/img/PowerIcon.png" alt="PowerIcon Logo" class="header-logo"></a> 
+    </h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="televisions.html" class="active">Televisions</a>
+        <a href="about.html">About</a>
+    </nav>
+</header>
+
+<section id="tv-energy">
+    <header>
+        <h2>Televisions Energy Consumptions</h2>
+        <p>Televisions power varies differently depending on the type of screen used on a television such as OLED, LED or LCD. Each has it's own strength and flaw which divides it's consumer base.</p>
+    </header>
+
+    <!-- Bar Chart Container from Exercise 5.1 -->
+    <div id="bar-chart"></div>
+
+    <!-- Line Chart Section Heading & Container for Exercise 5.2 -->
+    <header style="margin-top: 50px;">
+        <h2>Electricity Spot Prices in Australia (1998-2024)</h2>
+        <p>Investigating the average cost per megawatt-hour of electricity in Australia over a 27-year period.</p>
+    </header>
+    <div id="line-chart"></div>
+</section>
+
+<footer>
+        <p>&copy; <span id="current-year"></span> Dayaanan A/L Kejandran</p>
+        <p>Gen AI Claude was used for guidance, debugging, and certain wording for some placeholder text. Code was written by myself and taken some from my own previous web html pages.</p>
+</footer>
+
+    <script src="assets/js/scripts.js"></script>
+    <script src="assets/js/sketch.js"></script>
+    <!-- New Line Chart Script -->
+    <script src="assets/js/line-chart.js"></script>
+</body>
+</html>
