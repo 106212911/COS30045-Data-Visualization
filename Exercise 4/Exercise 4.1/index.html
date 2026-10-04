@@ -5,9 +5,10 @@
 <title>Exercise 4.1 - SVG Haunted House</title>
 <style>
   body { font-family: Arial, sans-serif; background: #1c1c1c; color: #eee; margin: 0; padding: 20px; }
-  h1, h2 { color: #eee; }
+  h1, h2, h3 { color: #eee; }
   .card { background: #2a2a2a; padding: 20px; border-radius: 8px; box-shadow: 0 2px 6px rgba(0,0,0,0.5); max-width: 850px; margin: 0 auto 30px auto; }
   svg { border: 1px solid #555; display: block; margin: 0 auto; background: #000; }
+  img { display: block; margin: 0 auto; border: 1px solid #555; }
   .note { font-size: 0.9em; color: #bbb; }
   code { background: #444; padding: 2px 5px; border-radius: 3px; color: #eee; }
 </style>
@@ -21,10 +22,10 @@
   <h2>Step 1-4: Haunted House and Graveyard Picture</h2>
   <svg id="house" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
 
-    <!-- Night sky (rect) -->
+    <!-- dark sky-->
     <rect x="0" y="0" width="800" height="420" fill="#181830" />
 
-    <!-- Ground (rect) -->
+    <!-- ground floor -->
     <rect x="0" y="420" width="800" height="180" fill="#2e3d23" />
 
     <!-- Stars (circle) -->
@@ -37,13 +38,13 @@
     <circle cx="760" cy="40" r="2" fill="#ffffff" />
     <circle cx="30" cy="180" r="2" fill="#ffffff" />
 
-    <!-- Moon (circle) with craters -->
+    <!-- moon -->
     <circle cx="690" cy="80" r="45" fill="#e8e8e0" stroke="#c9c9bd" stroke-width="2" />
     <circle cx="678" cy="65" r="6" fill="#cfcfc4" />
     <circle cx="706" cy="96" r="4" fill="#cfcfc4" />
     <circle cx="670" cy="98" r="3" fill="#cfcfc4" />
 
-    <!-- Bats (path, reused via g + transform) -->
+    <!-- bat -->
     <g fill="#0d0d0d">
       <g transform="translate(160,60)">
         <path d="M0,0 Q10,-14 20,0 Q10,4 0,0 M20,0 Q30,-14 40,0 Q30,4 20,0" />
@@ -56,31 +57,30 @@
       </g>
     </g>
 
-    <!-- Dead tree (rect trunk + polyline branches) -->
+    <!-- crooked tree -->
     <rect x="100" y="330" width="20" height="90" fill="#141414" />
     <polyline points="110,330 90,300 70,310 90,300 100,270 120,290 100,270 130,300 150,290 130,300 110,330"
               fill="none" stroke="#141414" stroke-width="4" stroke-linejoin="round" />
 
-    <!-- House body (rect) -->
+    <!-- house body-->
     <rect x="250" y="260" width="300" height="190" fill="#2b2b2b" stroke="#000000" stroke-width="3" />
 
-    <!-- Jagged roof (polygon) -->
+    <!-- roof -->
     <polygon points="230,260 320,150 350,190 400,120 450,190 480,150 570,260"
               fill="#171717" stroke="#000000" stroke-width="3" />
 
-    <!-- Chimney (rect) -->
+    <!-- chimney -->
     <rect x="480" y="160" width="35" height="80" fill="#3a3a3a" stroke="#000000" stroke-width="2" />
 
-    <!-- Eerie red smoke (path) -->
+    <!-- red smoke -->
     <path d="M497,160 C480,140 515,120 497,100 C480,80 515,60 500,45"
           fill="none" stroke="#e53935" stroke-width="4" stroke-linecap="round" opacity="0.8" />
 
-    <!-- Round door (circle) with doorknob dot -->
+    <!-- round door with knob -->
     <circle cx="400" cy="415" r="35" fill="#0d0d0d" stroke="#4e342e" stroke-width="2" />
     <circle cx="425" cy="415" r="4" fill="#b71c1c" />
 
-    <!-- Windows: glowing round "eyes" with boarded X planks, grouped so both
-         share identical style, each positioned using transform + translate -->
+    <!-- windows -->
     <g class="windows" fill="#ffb300" stroke="#000000" stroke-width="3">
       <g transform="translate(310,320)">
         <circle r="30" />
@@ -94,20 +94,20 @@
       </g>
     </g>
 
-    <!-- Broken stone path (polygon) -->
+    <!-- stone  -->
     <polygon points="380,450 420,450 450,560 350,560" fill="#616161" stroke="#424242" stroke-width="2" />
 
-    <!-- Crooked fence (polyline) -->
+    <!--the fences -->
     <polyline points="30,470 60,450 90,470 120,450 150,470 180,450 210,470"
               fill="none" stroke="#141414" stroke-width="4" />
 
-    <!-- Tombstone (path rounded top + text), positioned to the right of the pumpkin -->
+    <!-- dead tombstone  -->
     <g transform="translate(380,565)">
       <path d="M0,0 L0,-65 A25,25 0 0 1 50,-65 L50,0 Z" fill="#757575" stroke="#424242" stroke-width="2" />
       <text x="25" y="-25" font-size="13" text-anchor="middle" fill="#212121">R.I.P</text>
     </g>
 
-    <!-- Jack-o-lantern (ellipse body + polygon eyes/mouth) -->
+    <!-- the lantern -->
     <g transform="translate(330,548)">
       <ellipse cx="0" cy="0" rx="18" ry="14" fill="#ff6f00" stroke="#4e342e" stroke-width="2" />
       <polygon points="-8,-3 -3,-3 -5,3" fill="#4e342e" />
@@ -115,7 +115,7 @@
       <polygon points="-6,6 6,6 3,9 -3,9" fill="#4e342e" />
     </g>
 
-    <!-- Title text -->
+    <!-- for title text -->
     <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold"
           text-anchor="middle" fill="#e0e0e0">Haunted House</text>
     <text x="400" y="590" font-family="Arial" font-size="14"
@@ -133,149 +133,20 @@
 
 <div class="card">
   <h2>Step 2: SVG Coordinate System — Annotated Version</h2>
-  <p class="note">
-    Screenshot the picture below (it already has numbered markers on the drawing
-    with a matching legend underneath, so the callout text doesn't sit on top of
-    the picture) and save it as <code>annotation.png</code>, then reference it
-    below with an <code>&lt;img&gt;</code> tag as the assignment requires.
-  </p>
+  <img src="assets/img/annotation.png" alt="Annotated SVG coordinate system" style="max-width:100%;">
 
-  <svg id="annotated" viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
-    <rect x="0" y="0" width="800" height="900" fill="#111" />
-
-    <!-- background grid, 50px spacing, over the picture area only -->
-    <g stroke="#292929" stroke-width="1">
-      <line x1="0" y1="0" x2="0" y2="600" /><line x1="50" y1="0" x2="50" y2="600" />
-      <line x1="100" y1="0" x2="100" y2="600" /><line x1="150" y1="0" x2="150" y2="600" />
-      <line x1="200" y1="0" x2="200" y2="600" /><line x1="250" y1="0" x2="250" y2="600" />
-      <line x1="300" y1="0" x2="300" y2="600" /><line x1="350" y1="0" x2="350" y2="600" />
-      <line x1="400" y1="0" x2="400" y2="600" /><line x1="450" y1="0" x2="450" y2="600" />
-      <line x1="500" y1="0" x2="500" y2="600" /><line x1="550" y1="0" x2="550" y2="600" />
-      <line x1="600" y1="0" x2="600" y2="600" /><line x1="650" y1="0" x2="650" y2="600" />
-      <line x1="700" y1="0" x2="700" y2="600" /><line x1="750" y1="0" x2="750" y2="600" />
-      <line x1="800" y1="0" x2="800" y2="600" />
-      <line x1="0" y1="0" x2="800" y2="0" /><line x1="0" y1="50" x2="800" y2="50" />
-      <line x1="0" y1="100" x2="800" y2="100" /><line x1="0" y1="150" x2="800" y2="150" />
-      <line x1="0" y1="200" x2="800" y2="200" /><line x1="0" y1="250" x2="800" y2="250" />
-      <line x1="0" y1="300" x2="800" y2="300" /><line x1="0" y1="350" x2="800" y2="350" />
-      <line x1="0" y1="400" x2="800" y2="400" /><line x1="0" y1="450" x2="800" y2="450" />
-      <line x1="0" y1="500" x2="800" y2="500" /><line x1="0" y1="550" x2="800" y2="550" />
-      <line x1="0" y1="600" x2="800" y2="600" />
-    </g>
-    <!-- axis tick numbers, spaced well clear of the artwork corners -->
-    <g font-size="10" fill="#666">
-      <text x="4" y="12">0</text><text x="96" y="12">100</text><text x="196" y="12">200</text>
-      <text x="296" y="12">300</text><text x="396" y="12">400</text><text x="496" y="12">500</text>
-      <text x="596" y="12">600</text><text x="696" y="12">700</text>
-      <text x="4" y="112">100</text><text x="4" y="212">200</text><text x="4" y="312">300</text>
-      <text x="4" y="412">400</text><text x="4" y="512">500</text><text x="4" y="612">600</text>
-    </g>
-
-    <!-- === exact copy of the final picture, so the markers line up === -->
-    <rect x="0" y="0" width="800" height="420" fill="#181830" />
-    <rect x="0" y="420" width="800" height="180" fill="#2e3d23" />
-    <circle cx="50" cy="50" r="2" fill="#ffffff" /><circle cx="120" cy="30" r="2" fill="#ffffff" />
-    <circle cx="300" cy="60" r="2" fill="#ffffff" /><circle cx="450" cy="20" r="2" fill="#ffffff" />
-    <circle cx="200" cy="110" r="2" fill="#ffffff" /><circle cx="620" cy="150" r="2" fill="#ffffff" />
-    <circle cx="760" cy="40" r="2" fill="#ffffff" /><circle cx="30" cy="180" r="2" fill="#ffffff" />
-    <circle cx="690" cy="80" r="45" fill="#e8e8e0" stroke="#c9c9bd" stroke-width="2" />
-    <circle cx="678" cy="65" r="6" fill="#cfcfc4" /><circle cx="706" cy="96" r="4" fill="#cfcfc4" />
-    <circle cx="670" cy="98" r="3" fill="#cfcfc4" />
-    <g fill="#0d0d0d">
-      <g transform="translate(160,60)"><path d="M0,0 Q10,-14 20,0 Q10,4 0,0 M20,0 Q30,-14 40,0 Q30,4 20,0" /></g>
-      <g transform="translate(500,40) scale(0.7)"><path d="M0,0 Q10,-14 20,0 Q10,4 0,0 M20,0 Q30,-14 40,0 Q30,4 20,0" /></g>
-      <g transform="translate(250,140) scale(0.5)"><path d="M0,0 Q10,-14 20,0 Q10,4 0,0 M20,0 Q30,-14 40,0 Q30,4 20,0" /></g>
-    </g>
-    <rect x="100" y="330" width="20" height="90" fill="#141414" />
-    <polyline points="110,330 90,300 70,310 90,300 100,270 120,290 100,270 130,300 150,290 130,300 110,330"
-              fill="none" stroke="#141414" stroke-width="4" stroke-linejoin="round" />
-    <rect x="250" y="260" width="300" height="190" fill="#2b2b2b" stroke="#000000" stroke-width="3" />
-    <polygon points="230,260 320,150 350,190 400,120 450,190 480,150 570,260" fill="#171717" stroke="#000000" stroke-width="3" />
-    <rect x="480" y="160" width="35" height="80" fill="#3a3a3a" stroke="#000000" stroke-width="2" />
-    <path d="M497,160 C480,140 515,120 497,100 C480,80 515,60 500,45"
-          fill="none" stroke="#e53935" stroke-width="4" stroke-linecap="round" opacity="0.8" />
-    <circle cx="400" cy="415" r="35" fill="#0d0d0d" stroke="#4e342e" stroke-width="2" />
-    <circle cx="425" cy="415" r="4" fill="#b71c1c" />
-    <g class="windows" fill="#ffb300" stroke="#000000" stroke-width="3">
-      <g transform="translate(310,320)">
-        <circle r="30" />
-        <line x1="-21" y1="-21" x2="21" y2="21" stroke="#000000" stroke-width="4" />
-        <line x1="-21" y1="21" x2="21" y2="-21" stroke="#000000" stroke-width="4" />
-      </g>
-      <g transform="translate(490,320)">
-        <circle r="30" />
-        <line x1="-21" y1="-21" x2="21" y2="21" stroke="#000000" stroke-width="4" />
-        <line x1="-21" y1="21" x2="21" y2="-21" stroke="#000000" stroke-width="4" />
-      </g>
-    </g>
-    <polygon points="380,450 420,450 450,560 350,560" fill="#616161" stroke="#424242" stroke-width="2" />
-    <polyline points="30,470 60,450 90,470 120,450 150,470 180,450 210,470" fill="none" stroke="#141414" stroke-width="4" />
-    <g transform="translate(380,565)">
-      <path d="M0,0 L0,-65 A25,25 0 0 1 50,-65 L50,0 Z" fill="#757575" stroke="#424242" stroke-width="2" />
-      <text x="25" y="-25" font-size="13" text-anchor="middle" fill="#212121">R.I.P</text>
-    </g>
-    <g transform="translate(330,548)">
-      <ellipse cx="0" cy="0" rx="18" ry="14" fill="#ff6f00" stroke="#4e342e" stroke-width="2" />
-      <polygon points="-8,-3 -3,-3 -5,3" fill="#4e342e" />
-      <polygon points="8,-3 3,-3 5,3" fill="#4e342e" />
-      <polygon points="-6,6 6,6 3,9 -3,9" fill="#4e342e" />
-    </g>
-    <text x="400" y="40" font-family="Arial" font-size="28" font-weight="bold" text-anchor="middle" fill="#e0e0e0">Haunted House</text>
-    <text x="400" y="590" font-family="Arial" font-size="14" text-anchor="middle" fill="#9e9e9e">The Graveyard</text>
-
-    <!-- === numbered markers on the picture (small, so nothing overlaps) === -->
-    <g font-family="Arial" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle">
-      <circle cx="250" cy="260" r="10" fill="#e53935" /><text x="250" y="264">1</text>
-      <circle cx="400" cy="415" r="10" fill="#e53935" /><text x="400" y="419">2</text>
-      <circle cx="330" cy="548" r="10" fill="#e53935" /><text x="330" y="552">3</text>
-      <circle cx="289" cy="299" r="10" fill="#e53935" /><text x="289" y="303">4</text>
-      <circle cx="400" cy="120" r="10" fill="#e53935" /><text x="400" y="124">5</text>
-      <circle cx="110" cy="330" r="10" fill="#e53935" /><text x="110" y="334">6</text>
-      <circle cx="160" cy="60" r="10" fill="#e53935" /><text x="160" y="64">7</text>
-      <circle cx="400" cy="40" r="10" fill="#e53935" /><text x="400" y="44">8</text>
-      <circle cx="310" cy="320" r="10" fill="#e53935" /><text x="310" y="324">9</text>
-    </g>
-
-    <!-- === legend, clear of the artwork, evenly spaced so nothing overlaps === -->
-    <rect x="0" y="620" width="800" height="280" fill="#1a1a1a" />
-    <text x="20" y="645" font-size="15" font-weight="bold" fill="#e0e0e0">Legend — shape type: coordinates used in the code</text>
-
-    <g font-family="Arial" font-size="13" fill="#ff8a80">
-      <circle cx="30" cy="668" r="9" fill="#e53935" /><text x="30" y="672" text-anchor="middle" fill="#fff" font-weight="bold">1</text>
-      <text x="50" y="672">rect (house body): x=250 y=260 width=300 height=190</text>
-
-      <circle cx="30" cy="694" r="9" fill="#e53935" /><text x="30" y="698" text-anchor="middle" fill="#fff" font-weight="bold">2</text>
-      <text x="50" y="698">circle (door): cx=400 cy=415 r=35</text>
-
-      <circle cx="30" cy="720" r="9" fill="#e53935" /><text x="30" y="724" text-anchor="middle" fill="#fff" font-weight="bold">3</text>
-      <text x="50" y="724">ellipse (pumpkin body): cx=330 cy=548 rx=18 ry=14</text>
-
-      <circle cx="30" cy="746" r="9" fill="#e53935" /><text x="30" y="750" text-anchor="middle" fill="#fff" font-weight="bold">4</text>
-      <text x="50" y="750">line (window X board): x1=289 y1=299 x2=331 y2=341</text>
-
-      <circle cx="30" cy="772" r="9" fill="#e53935" /><text x="30" y="776" text-anchor="middle" fill="#fff" font-weight="bold">5</text>
-      <text x="50" y="776">polygon (roof): "230,260 320,150 350,190 400,120 450,190 480,150 570,260"</text>
-
-      <circle cx="30" cy="798" r="9" fill="#e53935" /><text x="30" y="802" text-anchor="middle" fill="#fff" font-weight="bold">6</text>
-      <text x="50" y="802">polyline (dead tree branches): open path starting at 110,330</text>
-
-      <circle cx="30" cy="824" r="9" fill="#e53935" /><text x="30" y="828" text-anchor="middle" fill="#fff" font-weight="bold">7</text>
-      <text x="50" y="828">path (bat wings): "M0,0 Q10,-14 20,0 ..." inside &lt;g transform="translate(160,60)"&gt;</text>
-
-      <circle cx="30" cy="850" r="9" fill="#e53935" /><text x="30" y="854" text-anchor="middle" fill="#fff" font-weight="bold">8</text>
-      <text x="50" y="854">text (title): x=400 y=40 text-anchor="middle"</text>
-
-      <circle cx="30" cy="876" r="9" fill="#e53935" /><text x="30" y="880" text-anchor="middle" fill="#fff" font-weight="bold">9</text>
-      <text x="50" y="880">g + transform (window group): &lt;g transform="translate(310,320)"&gt;</text>
-    </g>
-  </svg>
-</div>
-
-<div class="card">
-  <h2>Add your screenshot here</h2>
-  <p>Once you take and save the screenshot, embed it like this:</p>
-  <pre><code>&lt;img src="annotation.png" alt="Annotated SVG coordinate system" style="max-width:100%;"&gt;</code></pre>
-  <!-- <img src="annotation.png" alt="Annotated SVG coordinate system"> -->
+  <h3>Legend — shape type: coordinates used in the code</h3>
+  <ol class="note">
+    <li>rect (house body): x=250 y=260 width=300 height=190</li>
+    <li>circle (door): cx=400 cy=415 r=35</li>
+    <li>ellipse (pumpkin body): cx=330 cy=548 rx=18 ry=14</li>
+    <li>line (window X board): x1=289 y1=299 x2=331 y2=341</li>
+    <li>polygon (roof): "230,260 320,150 350,190 400,120 450,190 480,150 570,260"</li>
+    <li>polyline (dead tree branches): open path starting at 110,330</li>
+    <li>path (bat wings): "M0,0 Q10,-14 20,0 ..." inside &lt;g transform="translate(160,60)"&gt;</li>
+    <li>text (title): x=400 y=40 text-anchor="middle"</li>
+    <li>g + transform (window group): &lt;g transform="translate(310,320)"&gt;</li>
+  </ol>
 </div>
 
 </body>
